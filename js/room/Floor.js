@@ -3,30 +3,28 @@ import { loadTexture } from '../loaders.js';
 
 class Floor {
 
-    constructor(position, number, size, interval, thickness) {
+    constructor(number, size, interval, thickness) {
         
-        this.position = position;
         this.number = number;
         this.size = size;
         this.interval = interval;
         this.thickness = thickness;
 
         this.totalSize = [
-            this.number[0] * size[0] + (this.number[0] - 1) * interval,
-            this.number[1] * size[1] + (this.number[1] - 1) * interval
+            this.number[0] * size[0] + (this.number[0] - 1) * interval[0],
+            this.number[1] * size[1] + (this.number[1] - 1) * interval[1]
         ];
 
         this.scene = new THREE.Object3D();
         this.net = new THREE.Object3D();
-        this.interval;
+        this.background;
 
         this.createNet();
+        this.createBackground();
 
     }
 
     createNet() {
-
-        this.net.position.set(...this.position);
 
         const material = new THREE.MeshLambertMaterial({ color: new THREE.Color(1, 1, 1) });
         const geometry = new THREE.BoxGeometry(this.size[0], this.thickness, this.size[1]);
@@ -34,7 +32,7 @@ class Floor {
 
         let xPos, zPos;
         const xStart = -this.totalSize[0] / 2;
-        const zStart = -this.totalSize[2] / 2;
+        const zStart = -this.totalSize[1] / 2;
 
         for (let i = 0; i < this.number[0]; i++) {
 
@@ -57,26 +55,26 @@ class Floor {
 
     }
 
-    createInterval() {
+    createBackground() {
 
         const material = new THREE.MeshLambertMaterial({ color: new THREE.Color(1, 1, 1) });
-        const geometry = new THREE.BoxGeometry(this.size[0], this.thickness, this.size[1]);
-        this.interval = new THREE.Mesh(geometry, material);
-        this.interval.position.set(...this.position);
-        this.scene.add(this.interval);
+        const geometry = new THREE.BoxGeometry(this.totalSize[0], this.thickness, this.totalSize[1]);
+        this.background = new THREE.Mesh(geometry, material);
+        this.background.position.set(0, -this.thickness / 5, 0);
+        this.scene.add(this.background);
 
     }
 
-    setIntervalColor(color) {
+    setBackgroundColor(color) {
 
-        this.interval.material.color = new THREE.Color(...color);
-        this.interval.material.needsUpdate = true;
+        this.background.material.color = new THREE.Color(...color);
+        this.background.material.needsUpdate = true;
 
     }
 
     async setNetTexture(texturePath) {
 
-        texture = await loadTexture(texturePath);
+        const texture = await loadTexture(texturePath);
         this.net.children.forEach( mesh => {
             mesh.material = new THREE.MeshLambertMaterial({ map: texture });
         });

@@ -26,11 +26,14 @@ class Main {
 
     async initScene() {
 
-        let scope = this;
+        const axesHelper = new THREE.AxesHelper( 50 );
+        this.scene.add( axesHelper );
+
         this.roomManager = new RoomManager();
-        await this.roomManager.loadFirstResource();
         this.scene.add(this.roomManager.scene);
-        this.roomManager.loadOtherResource()
+        await this.roomManager.loadFirstResource();
+        await this.roomManager.loadOtherResource();
+        await this.roomManager.createObjects();
 
     }
 
@@ -58,22 +61,24 @@ class Main {
 
     initLight() {
 
-        const ambientLight = new THREE.AmbientLight( 0xffffff , 1 );
-        this.scene.add( ambientLight );
+        // const ambientLight = new THREE.AmbientLight( 0xffffff , 1 );
+        // this.scene.add( ambientLight );
 
-        const pointLight = new THREE.PointLight( 0xffffff, 1 );
-        pointLight.position.set( 0, 40.97, 0 );
-        pointLight.rotation.set( 0, Math.PI / 2, 0 );
+        const pointLight1 = new THREE.PointLight( 0xffffff, 1 );
+        pointLight1.position.set( 10, 5, -10 );
+        this.scene.add( pointLight1 );
 
-        pointLight.castShadow = true;
-        pointLight.shadow.camera.near = 1200;
-        pointLight.shadow.camera.far = 2500;
-        pointLight.shadow.bias = 0.0001;
+        const pointLight2 = new THREE.PointLight( 0xffffff, 1 );
+        pointLight2.position.set( -10, 5, 10 );
+        this.scene.add( pointLight2 );
 
-        pointLight.shadow.mapSize.width = this.winWidth;
-        pointLight.shadow.mapSize.height = this.winHeight;
+        // pointLight.castShadow = true;
+        // pointLight.shadow.camera.near = 1200;
+        // pointLight.shadow.camera.far = 2500;
+        // pointLight.shadow.bias = 0.0001;
 
-        this.scene.add( pointLight );
+        // pointLight.shadow.mapSize.width = this.winWidth;
+        // pointLight.shadow.mapSize.height = this.winHeight;
 
     }
 
