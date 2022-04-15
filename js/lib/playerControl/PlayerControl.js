@@ -5,7 +5,7 @@ class PlayerControl{
         this.controller=new PlayerControl0(camera);
         this.frustum;
         var scope=this;
-        this.controller.KeyboardMoveStep=8;
+        this.controller.KeyboardMoveStep=1;
         function tool(){
             requestAnimationFrame(tool);
             scope.controller.update();

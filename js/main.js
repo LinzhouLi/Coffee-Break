@@ -1,6 +1,7 @@
 import * as THREE from './lib/threejs/three.module.js';
 import { MoveManager } from './lib/playerControl/MoveManager.js';
 import { RoomManager } from './room/RoomManager.js';
+import { PosterManager } from './poster/PosterManager.js';
 
 class Main {
 
@@ -17,6 +18,7 @@ class Main {
         this.winHeight = window.innerHeight;
 
         this.roomManager;
+        this.posterManager;
 
         this.initCamera();
         this.initLight();
@@ -34,6 +36,14 @@ class Main {
         await this.roomManager.loadFirstResource();
         await this.roomManager.loadOtherResource();
         await this.roomManager.createObjects();
+
+        this.posterManager = new PosterManager();
+        this.scene.add(this.posterManager.scene);
+        await this.posterManager.loadPoster();
+
+        this.scene.traverse( node => {
+            if(node.uuid == "ED162248-019D-4CA2-AB4D-2B5F6147624D") console.log(node)
+        })
 
     }
 
@@ -65,11 +75,11 @@ class Main {
         // this.scene.add( ambientLight );
 
         const pointLight1 = new THREE.PointLight( 0xffffff, 1 );
-        pointLight1.position.set( 10, 5, -10 );
+        pointLight1.position.set( 20, 10, 20 );
         this.scene.add( pointLight1 );
 
         const pointLight2 = new THREE.PointLight( 0xffffff, 1 );
-        pointLight2.position.set( -10, 5, 10 );
+        pointLight2.position.set( -20, 10, -20 );
         this.scene.add( pointLight2 );
 
         // pointLight.castShadow = true;

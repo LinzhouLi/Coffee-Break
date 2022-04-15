@@ -10,9 +10,10 @@ class Image3D {
 
     }
 
-    async loadImage(imagePath) {
+    async loadImage(imagePath, flipY = true) {
 
         const texture = await loadTexture(imagePath);
+        texture.flipY = flipY;
         const material = new THREE.MeshPhongMaterial({
             map: texture,
             transparent: true

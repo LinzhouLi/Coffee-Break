@@ -1,5 +1,5 @@
 import * as THREE from '../lib/threejs/three.module.js';
-import { loadGLB } from '../loaders.js';
+import { loadGLB, loadTexture } from '../loaders.js';
 import { Floor } from './Floor.js';
 import { Image3D } from './Image3D.js';
 
@@ -21,7 +21,7 @@ class RoomManager {
 
     async loadOtherResource() {
 
-        for (let i = 0; i < 12; i++) {
+        for (let i = 1; i < 12; i++) {
             let glb = await loadGLB(`assets/room/model/new${i}.gltf`);
             this.traverseGLB(glb);
             this.scene.add(glb.scene);
@@ -31,11 +31,15 @@ class RoomManager {
 
     async createObjects() {
 
+        // 地板
+
         const floor = new Floor([11, 7], [3, 3], [0.11, 0.11], 0.01);
         floor.scene.position.set(0.3, 0, 1.3);
         floor.setBackgroundColor([0.4, 0.4, 0.4]);
         await floor.setNetTexture("assets/room/texture/marble.jpg");
         this.scene.add(floor.scene);
+
+        // 两面墙
 
         const wall1 = new Floor([3, 4], [2, 2], [0, 0], 0.01);
         wall1.scene.position.set(-16.7, 2, 2);
@@ -48,6 +52,8 @@ class RoomManager {
         wall2.scene.rotation.z = Math.PI / 2;
         await wall2.setNetTexture("assets/room/texture/wood2.jpg");
         this.scene.add(wall2.scene);
+
+        // 海报
 
         const logo1 = new Image3D([1.47, 1.46]);
         logo1.scene.position.set(-4.14, 1.82, 0.06);
@@ -77,6 +83,56 @@ class RoomManager {
         poster3.scene.rotation.y = Math.PI;
         await poster3.loadImage("assets/room/texture/CASA_poster.jpg");
         this.scene.add(poster3.scene);
+
+        // 展厅中央柱子
+
+        const img1 = new Image3D([0.9979, 0.7051]);
+        img1.scene.position.set(5.7235, 2.8786, -1.5859);
+        img1.scene.rotation.set(-0.4392, Math.PI, 0, "ZXY");
+        await img1.loadImage("assets/room/texture/1.jpg");
+        this.scene.add(img1.scene);
+
+        const img2 = new Image3D([0.9832, 0.6995]);
+        img2.scene.position.set(5.7235, 1.5645, -1.0816);
+        img2.scene.rotation.set(-0.2427, Math.PI, 0, "ZXY");
+        await img2.loadImage("assets/room/texture/2.jpg");
+        this.scene.add(img2.scene);
+
+        const img3 = new Image3D([0.9979, 0.6853]);
+        img3.scene.position.set(7.2455, 2.8703, -0.0182);
+        img3.scene.rotation.set(0, Math.PI / 2, -0.4369, "ZXY");
+        await img3.loadImage("assets/room/texture/3.jpg");
+        this.scene.add(img3.scene);
+
+        const img4 = new Image3D([0.9832, 0.7037]);
+        img4.scene.position.set(6.7180, 1.5717, -0.0182);
+        img4.scene.rotation.set(0, Math.PI / 2, -0.2580, "ZXY");
+        await img4.loadImage("assets/room/texture/4.jpg");
+        this.scene.add(img4.scene);
+
+        const img5 = new Image3D([1.0151, 0.7841]);
+        img5.scene.position.set(5.6751, 2.8753, 1.4996);
+        img5.scene.rotation.set(0.4288, 0, 0, "ZXY");
+        await img5.loadImage("assets/room/texture/5.jpg");
+        this.scene.add(img5.scene);
+
+        const img6 = new Image3D([0.9832, 0.7037]);
+        img6.scene.position.set(5.6751, 1.5512, 0.9820);
+        img6.scene.rotation.set(0.2602, 0, 0, "ZXY");
+        await img6.loadImage("assets/room/texture/6.jpg");
+        this.scene.add(img6.scene);
+
+        const img7 = new Image3D([0.9832, 0.6893]);
+        img7.scene.position.set(4.1594, 2.8774, -0.0583);
+        img7.scene.rotation.set(0, -Math.PI / 2, 0.4318, "ZXY");
+        await img7.loadImage("assets/room/texture/7.jpg");
+        this.scene.add(img7.scene);
+
+        const img8 = new Image3D([0.9832, 0.7037]);
+        img8.scene.position.set(4.6866, 1.5703, -0.0583);
+        img8.scene.rotation.set(0, -Math.PI / 2, 0.2513, "ZXY");
+        await img8.loadImage("assets/room/texture/8.jpg");
+        this.scene.add(img8.scene);
 
     }
 

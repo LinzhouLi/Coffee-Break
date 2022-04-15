@@ -12,6 +12,7 @@
 				position: fixed;
 				left: 0px;
 				top: 0px;
+				user-select: none;
 			}
 		</style>
 	</head>
@@ -19,6 +20,8 @@
 	<body style="margin: 0">
         <div id="fps"></div>
 		<script type="module">
+			document.oncontextmenu = function() { return false; } // 禁止右键
+
 			import { Main } from './js/Main.js';
 			import { PlayerControl } from './js/lib/playerControl/PlayerControl.js';
 
