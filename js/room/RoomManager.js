@@ -84,56 +84,6 @@ class RoomManager {
         await poster3.loadImage("assets/room/texture/CASA_poster.jpg");
         this.scene.add(poster3.scene);
 
-        // 展厅中央柱子
-
-        const img1 = new Image3D([0.9979, 0.7051]);
-        img1.scene.position.set(5.7235, 2.8786, -1.5859);
-        img1.scene.rotation.set(-0.4392, Math.PI, 0, "ZXY");
-        await img1.loadImage("assets/room/texture/1.jpg");
-        this.scene.add(img1.scene);
-
-        const img2 = new Image3D([0.9832, 0.6995]);
-        img2.scene.position.set(5.7235, 1.5645, -1.0816);
-        img2.scene.rotation.set(-0.2427, Math.PI, 0, "ZXY");
-        await img2.loadImage("assets/room/texture/2.jpg");
-        this.scene.add(img2.scene);
-
-        const img3 = new Image3D([0.9979, 0.6853]);
-        img3.scene.position.set(7.2455, 2.8703, -0.0182);
-        img3.scene.rotation.set(0, Math.PI / 2, -0.4369, "ZXY");
-        await img3.loadImage("assets/room/texture/3.jpg");
-        this.scene.add(img3.scene);
-
-        const img4 = new Image3D([0.9832, 0.7037]);
-        img4.scene.position.set(6.7180, 1.5717, -0.0182);
-        img4.scene.rotation.set(0, Math.PI / 2, -0.2580, "ZXY");
-        await img4.loadImage("assets/room/texture/4.jpg");
-        this.scene.add(img4.scene);
-
-        const img5 = new Image3D([1.0151, 0.7841]);
-        img5.scene.position.set(5.6751, 2.8753, 1.4996);
-        img5.scene.rotation.set(0.4288, 0, 0, "ZXY");
-        await img5.loadImage("assets/room/texture/5.jpg");
-        this.scene.add(img5.scene);
-
-        const img6 = new Image3D([0.9832, 0.7037]);
-        img6.scene.position.set(5.6751, 1.5512, 0.9820);
-        img6.scene.rotation.set(0.2602, 0, 0, "ZXY");
-        await img6.loadImage("assets/room/texture/6.jpg");
-        this.scene.add(img6.scene);
-
-        const img7 = new Image3D([0.9832, 0.6893]);
-        img7.scene.position.set(4.1594, 2.8774, -0.0583);
-        img7.scene.rotation.set(0, -Math.PI / 2, 0.4318, "ZXY");
-        await img7.loadImage("assets/room/texture/7.jpg");
-        this.scene.add(img7.scene);
-
-        const img8 = new Image3D([0.9832, 0.7037]);
-        img8.scene.position.set(4.6866, 1.5703, -0.0583);
-        img8.scene.rotation.set(0, -Math.PI / 2, 0.2513, "ZXY");
-        await img8.loadImage("assets/room/texture/8.jpg");
-        this.scene.add(img8.scene);
-
     }
 
     traverseGLB(glb) {

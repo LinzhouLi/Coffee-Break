@@ -14,13 +14,22 @@
 				top: 0px;
 				user-select: none;
 			}
+			#poster {
+				display: none;
+				position: absolute;
+				left: 0; top: 0; right: 0; bottom: 0;
+				max-width: 100%;
+            	max-height: 100%;
+				margin: auto;
+			}
 		</style>
 	</head>
     
 	<body style="margin: 0">
         <div id="fps"></div>
+		<img id="poster" />
 		<script type="module">
-			document.oncontextmenu = function() { return false; } // 禁止右键
+			document.oncontextmenu = () => { return false; } // 禁止右键
 
 			import { Main } from './js/Main.js';
 			import { PlayerControl } from './js/lib/playerControl/PlayerControl.js';

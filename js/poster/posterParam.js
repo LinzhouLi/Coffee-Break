@@ -225,6 +225,57 @@ const posterParams = [
         src: "assets/poster/small2/7.jpg"
     },
 
+    // small3
+
+    {
+        position: [5.7235, 2.8786, -1.5859],
+        size: [0.9979, 0.7051, 0.01],
+        rotation: [-0.4392, Math.PI, 0],
+        src: "assets/poster/small3/1.jpg"
+    },
+    {
+        position: [5.7235, 1.5645, -1.0816],
+        size: [0.9832, 0.6995, 0.01],
+        rotation: [-0.2427, Math.PI, 0],
+        src: "assets/poster/small3/2.jpg"
+    },
+    {
+        position: [7.2455, 2.8703, -0.0182],
+        size: [0.9979, 0.6853, 0.01],
+        rotation: [0, Math.PI / 2, -0.4369],
+        src: "assets/poster/small3/3.jpg"
+    },
+    {
+        position: [6.7180, 1.5717, -0.0182],
+        size: [0.9832, 0.7037, 0.01],
+        rotation: [0, Math.PI / 2, -0.2580],
+        src: "assets/poster/small3/4.jpg"
+    },
+    {
+        position: [5.6751, 2.8753, 1.4996],
+        size: [1.0151, 0.7841, 0.01],
+        rotation: [0.4288, 0, 0],
+        src: "assets/poster/small3/5.jpg"
+    },
+    {
+        position: [5.6751, 1.5512, 0.9820],
+        size: [0.9832, 0.7037, 0.01],
+        rotation: [0.2602, 0, 0],
+        src: "assets/poster/small3/6.jpg"
+    },
+    {
+        position: [4.1594, 2.8774, -0.0583],
+        size: [0.9832, 0.6893, 0.01],
+        rotation: [0, -Math.PI / 2, 0.4318],
+        src: "assets/poster/small3/7.jpg"
+    },
+    {
+        position: [4.6866, 1.5703, -0.0583],
+        size: [0.9832, 0.7037, 0.01],
+        rotation: [0, -Math.PI / 2, 0.2513],
+        src: "assets/poster/small3/8.jpg"
+    },
+
     // medium
 
     {

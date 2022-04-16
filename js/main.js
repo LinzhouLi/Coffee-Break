@@ -41,9 +41,7 @@ class Main {
         this.scene.add(this.posterManager.scene);
         await this.posterManager.loadPoster();
 
-        this.scene.traverse( node => {
-            if(node.uuid == "ED162248-019D-4CA2-AB4D-2B5F6147624D") console.log(node)
-        })
+        this.enableClickPoster();
 
     }
 
@@ -146,6 +144,33 @@ class Main {
 
             scope.renderer.setSize( scope.winWidth, scope.winHeight );
         }
+
+    }
+
+    enableClickPoster() {
+
+        let showPoster = false;
+        let imageDocument = document.getElementById("poster");
+
+        document.ondblclick = event => {
+            if (showPoster) {
+                imageDocument.style.display = "none";
+                showPoster = false;
+            }
+            else {
+                let coords = new THREE.Vector2();
+                coords.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                coords.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                const poster = this.posterManager.clickIntersect(coords, this.camera);
+                if (poster) {
+                    console.log(poster);
+                    imageDocument.src = poster.imagePath;
+                    imageDocument.style.display = "block";
+                    showPoster = true;
+                }
+            }
+            
+        };
 
     }
 
