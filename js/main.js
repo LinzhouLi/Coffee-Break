@@ -2,6 +2,7 @@ import * as THREE from './lib/threejs/three.module.js';
 import { MoveManager } from './lib/playerControl/MoveManager.js';
 import { RoomManager } from './room/RoomManager.js';
 import { PosterManager } from './poster/PosterManager.js';
+import { AvatarManager } from './avatar/AvatarManager.js';
 
 class Main {
 
@@ -19,6 +20,7 @@ class Main {
 
         this.roomManager;
         this.posterManager;
+        this.avatarManager;
 
         this.initCamera();
         this.initLight();
@@ -40,6 +42,10 @@ class Main {
         this.posterManager = new PosterManager();
         this.scene.add(this.posterManager.scene);
         await this.posterManager.loadPoster();
+
+        this.avatarManager = new AvatarManager();
+        this.scene.add(this.avatarManager.scene);
+        await this.avatarManager.loadModel();
 
         this.enableClickPoster();
 
@@ -100,7 +106,7 @@ class Main {
         // this.renderer.shadowMap.enabled = true;
         // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.autoClear = false;
-        this.renderer.outputEncoding = THREE.sRGBEncoding;
+        // this.renderer.outputEncoding = THREE.sRGBEncoding;
 
         if ( this.VR ) this.stereoEffect = new THREE.StereoEffect( this.renderer );
 
