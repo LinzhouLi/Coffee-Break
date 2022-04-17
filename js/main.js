@@ -78,18 +78,28 @@ class Main {
         // const ambientLight = new THREE.AmbientLight( 0xffffff , 1 );
         // this.scene.add( ambientLight );
 
-        const pointLight1 = new THREE.PointLight( 0xffffff, 1 );
-        pointLight1.position.set( 20, 10, 20 );
+        const pointLight1 = new THREE.PointLight( 0xffffff, 0.5 );
+        pointLight1.position.set( 25, 5, 18 );
         this.scene.add( pointLight1 );
 
-        const pointLight2 = new THREE.PointLight( 0xffffff, 1 );
-        pointLight2.position.set( -20, 10, -20 );
+        const pointLight2 = new THREE.PointLight( 0xffffff, 0.5 );
+        pointLight2.position.set( -20, 10, 0 );
         this.scene.add( pointLight2 );
 
-        // pointLight.castShadow = true;
-        // pointLight.shadow.camera.near = 1200;
-        // pointLight.shadow.camera.far = 2500;
-        // pointLight.shadow.bias = 0.0001;
+        const pointLight3 = new THREE.PointLight( 0xffffff, 0.5 );
+        pointLight3.position.set( 25, 5, -20 );
+        this.scene.add( pointLight3 );
+
+        const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+        this.scene.add( light );
+
+        // pointLight1.castShadow = true;
+        // pointLight1.shadow.camera.near = 0.5;
+        // pointLight1.shadow.camera.far = 2500;
+        // pointLight1.shadow.bias = 0.0001;
+
+        // const helper = new THREE.CameraHelper( pointLight1.shadow.camera );
+        // this.scene.add( helper );
 
         // pointLight.shadow.mapSize.width = this.winWidth;
         // pointLight.shadow.mapSize.height = this.winHeight;
@@ -105,7 +115,6 @@ class Main {
 
         // this.renderer.shadowMap.enabled = true;
         // this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-        this.renderer.autoClear = false;
         // this.renderer.outputEncoding = THREE.sRGBEncoding;
 
         if ( this.VR ) this.stereoEffect = new THREE.StereoEffect( this.renderer );

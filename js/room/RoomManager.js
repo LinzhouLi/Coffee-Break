@@ -90,6 +90,7 @@ class RoomManager {
 
         glb.scene.traverse( node => {
             if (node instanceof THREE.Mesh) {
+                node.receiveShadow = true; // shadow
                 if (node.material.map) {
                     node.material.map.wrapS = THREE.RepeatWrapping;
                     node.material.map.wrapT = THREE.RepeatWrapping;

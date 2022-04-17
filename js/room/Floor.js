@@ -45,6 +45,7 @@ class Floor {
                 else zPos += this.size[1] + this.interval[1];
 
                 let tempBox = box.clone();
+                tempBox.receiveShadow = true; // shadow
                 tempBox.position.set(xPos, 0, zPos);
                 this.net.add(tempBox);
 
@@ -60,6 +61,7 @@ class Floor {
         const material = new THREE.MeshLambertMaterial({ color: new THREE.Color(1, 1, 1) });
         const geometry = new THREE.BoxGeometry(this.totalSize[0], this.thickness, this.totalSize[1]);
         this.background = new THREE.Mesh(geometry, material);
+        // this.background.receiveShadow = true; // shadow
         this.background.position.set(0, -this.thickness / 5, 0);
         this.scene.add(this.background);
 
