@@ -26,9 +26,17 @@ class AvatarManager {
     async loadModel() {
 
         const glb1 = await loadGLB(this.maleModelPath);
-        this.animations.male = glb1.animations
+        this.animations.male = glb1.animations;
         const glb2 = await loadGLB(this.femaleModelPath);
-        this.animations.female = glb2.animations
+        this.animations.female = glb2.animations;
+
+        this.clock.start();
+        let playAnimations = () => {
+            this.mixer.update(this.clock.getDelta());
+            this.updatePositions(this.clock.getDelta());
+            requestAnimationFrame(playAnimations);
+        }
+        playAnimations();
 
         for (let i = 0; i < avatarParams.length; i++) {
             let p = avatarParams[i];
@@ -42,12 +50,21 @@ class AvatarManager {
             this.actions[i].play();
         }
 
-        this.clock.start();
-        let playAnimations = () => {
-            this.mixer.update(this.clock.getDelta());
-            requestAnimationFrame(playAnimations);
+    }
+
+    updatePositions(deltaTime) {
+
+        for (let i = 0; i < avatarParams.length; i++) {
+            let p = avatarParams[i];
+            let avatar = this.avatars[i];
+            if (p.walkPath && avatar) {
+                if (avatar.walkTo(p.walkPath[avatar.destinationIndex], deltaTime)) {
+                    avatar.destinationIndex++;
+                    if (avatar.destinationIndex >= p.walkPath.length)
+                        avatar.destinationIndex = 0;
+                }
+            }
         }
-        playAnimations();
 
     }
 

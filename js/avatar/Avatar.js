@@ -1,6 +1,6 @@
 import * as THREE from '../lib/threejs/three.module.js';
 import { loadGLB, loadTexture } from '../loaders.js';
-import * as SkeletonUtils from '../lib/threejs/SkeletonUtils.js';
+// import * as SkeletonUtils from '../lib/threejs/SkeletonUtils.js';
 
 class Avatar {
 
@@ -14,6 +14,10 @@ class Avatar {
         this.hasHair = hairTexturePath ? true : false;
 
         this.model;
+
+        this.pace = 9.45; // 步行速度
+        this.turnSpeed = Math.PI / 30;
+        this.destinationIndex = 0;
 
     }
 
@@ -52,6 +56,29 @@ class Avatar {
                 roughness: 0.450053632,
                 transparent: true
             });
+        }
+
+    }
+
+    walkTo(destination, deltaTime) {
+
+        let startPos = this.model.position.clone();
+        // const startRot = this.model.rotation.y;
+        let endPos = new THREE.Vector3(...destination);
+        let direction = new THREE.Vector3().addVectors(endPos, startPos.clone().negate());
+        let endRot = Math.atan2(direction.x, direction.z);
+
+        this.model.rotation.set(0, endRot, 0);
+
+        const len =  this.pace * deltaTime;
+        if (direction.length() < len) { // 到达目标点
+            this.model.position.copy(endPos);
+            return true;
+        }
+        else {
+            startPos.addScaledVector(direction.normalize(), len);
+            this.model.position.copy(startPos);
+            return false;
         }
 
     }

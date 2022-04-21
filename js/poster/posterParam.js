@@ -3,52 +3,58 @@ const posterParams = [
     // large
 
     {
-        position: [-1.9374, 1.8316, 9.0138],
+        position: [-0.9374, 1.8316, 9.0138],
         size: [1.7221, 2.6602, 0.04261],
         rotation: [0, Math.PI, 0],
         src: "assets/poster/large/1.jpg"
     },
     {
+        position: [-2.9374, 1.8316, 9.0138],
+        size: [1.7221, 2.6602, 0.04261],
+        rotation: [0, Math.PI, 0],
+        src: "assets/poster/large/2.jpg"
+    },
+    {
         position: [-13.4329, 1.7517, 7.5561],
         size: [1.6888, 2.6602, 0.02834],
         rotation: [0, Math.PI / 2, 0],
-        src: "assets/poster/large/2.jpg"
+        src: "assets/poster/large/9.jpg"
     },
     {
         position: [-13.4329, 1.7517, 10.2606],
         size: [1.6888, 2.6602, 0.02834],
         rotation: [0, Math.PI / 2, 0],
-        src: "assets/poster/large/3.jpg"
+        src: "assets/poster/large/8.jpg"
     },
     {
         position: [-12.0664, 1.7517, 11.8436],
         size: [1.6888, 2.6602, 0.02834],
         rotation: [0, Math.PI, 0],
-        src: "assets/poster/large/4.jpg"
+        src: "assets/poster/large/7.jpg"
     },
     {
         position: [-9.8480, 1.7517, 11.8436],
         size: [1.6888, 2.6602, 0.02834],
         rotation: [0, Math.PI, 0],
-        src: "assets/poster/large/5.jpg"
+        src: "assets/poster/large/6.jpg"
     },
     {
         position: [-7.6545, 1.7517, 11.8436],
         size: [1.6888, 2.6602, 0.02834],
         rotation: [0, Math.PI, 0],
-        src: "assets/poster/large/6.jpg"
+        src: "assets/poster/large/5.jpg"
     },
     {
         position: [-5.4828, 1.7517, 11.8436],
         size: [1.6888, 2.6602, 0.02834],
         rotation: [0, Math.PI, 0],
-        src: "assets/poster/large/7.jpg"
+        src: "assets/poster/large/4.jpg"
     },
     {
         position: [-4.4377, 1.7517, 10.5543],
         size: [1.6888, 2.6602, 0.02834],
         rotation: [0, -Math.PI / 2, 0],
-        src: "assets/poster/large/8.jpg"
+        src: "assets/poster/large/3.jpg"
     },
 
     // small1
