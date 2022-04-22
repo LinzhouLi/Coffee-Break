@@ -44,13 +44,13 @@ class RoomManager {
         const wall1 = new Floor([3, 4], [2, 2], [0, 0], 0.01);
         wall1.scene.position.set(-16.7, 2, 2);
         wall1.scene.rotation.z = -Math.PI / 2;
-        await wall1.setNetTexture("assets/room/texture/wood2.jpg");
+        await wall1.setNetTexture("assets/room/texture/Wood2.jpg");
         this.scene.add(wall1.scene);
 
         const wall2 = new Floor([2, 3], [2, 2], [0, 0], 0.01);
         wall2.scene.position.set(17.7, 1.8, 6.3);
         wall2.scene.rotation.z = Math.PI / 2;
-        await wall2.setNetTexture("assets/room/texture/wood2.jpg");
+        await wall2.setNetTexture("assets/room/texture/Wood2.jpg");
         this.scene.add(wall2.scene);
 
         // 海报
