@@ -39,13 +39,13 @@ class Main {
         await this.roomManager.loadOtherResource();
         await this.roomManager.createObjects();
 
-        this.posterManager = new PosterManager();
-        this.scene.add(this.posterManager.scene);
-        await this.posterManager.loadPoster();
-
         this.avatarManager = new AvatarManager();
         this.scene.add(this.avatarManager.scene);
         await this.avatarManager.loadModel();
+
+        this.posterManager = new PosterManager();
+        this.scene.add(this.posterManager.scene);
+        await this.posterManager.loadPoster();
 
         this.enableClickPoster();
 

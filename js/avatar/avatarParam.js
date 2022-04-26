@@ -9,9 +9,9 @@ const avatarParams = [
         rotation: [0, 0, 0]
     },
     {
-        sex: "male",
-        modelPath: "assets/avatar/model/male_business02.glb",
-        texturePath: "assets/avatar/texture/male/business02.png",
+        sex: "female",
+        modelPath: "assets/avatar/model/female_casual09.glb",
+        texturePath: "assets/avatar/texture/female/casual09.png",
         animationType: 1,
         position: [-7, 0, 0],
         rotation: [0, Math.PI, 0]
@@ -35,9 +35,10 @@ const avatarParams = [
 
 
     {
-        sex: "male",
-        modelPath: "assets/avatar/model/male_business02.glb",
-        texturePath: "assets/avatar/texture/male/business05.png",
+        sex: "female",
+        modelPath: "assets/avatar/model/female_business04.glb",
+        texturePath: "assets/avatar/texture/female/business05.png",
+        hairPath: "assets/avatar/texture/female/business05_hair.png",
         animationType: 2,
         position: [-12, 0, 10],
         rotation: [0, -Math.PI / 2, 0]
@@ -70,9 +71,10 @@ const avatarParams = [
         rotation: [0, -Math.PI / 2, 0]
     },
     {
-        sex: "male",
-        modelPath: "assets/avatar/model/male_casual09.glb",
-        texturePath: "assets/avatar/texture/male/casual09.png",
+        sex: "female",
+        modelPath: "assets/avatar/model/female_business01.glb",
+        texturePath: "assets/avatar/texture/female/business01.png",
+        hairPath: "assets/avatar/texture/female/business01_hair.png",
         animationType: 5,
         position: [8.7, 0, 7],
         rotation: [0, Math.PI / 2, 0]
@@ -96,9 +98,9 @@ const avatarParams = [
     },
 
     {
-        sex: "male",
-        modelPath: "assets/avatar/model/male_casual16.glb",
-        texturePath: "assets/avatar/texture/male/sportive03.png",
+        sex: "female",
+        modelPath: "assets/avatar/model/female_business02.glb",
+        texturePath: "assets/avatar/texture/female/business02.png",
         animationType: 4,
         position: [15, 0, -2.5],
         rotation: [0, Math.PI / 4, 0]
@@ -122,18 +124,17 @@ const avatarParams = [
     },
 
     {
-        sex: "female",
-        modelPath: "assets/avatar/model/female_business01.glb",
-        texturePath: "assets/avatar/texture/female/business01.png",
-        hairPath: "assets/avatar/texture/female/business01_hair.png",
+        sex: "male",
+        modelPath: "assets/avatar/model/male_casual09.glb",
+        texturePath: "assets/avatar/texture/male/casual09.png",
         animationType: 0,
         position: [12, 0.11, -14],
         rotation: [0, 0, 0]
     },
     {
-        sex: "female",
-        modelPath: "assets/avatar/model/female_business02.glb",
-        texturePath: "assets/avatar/texture/female/business02.png",
+        sex: "male",
+        modelPath: "assets/avatar/model/male_casual16.glb",
+        texturePath: "assets/avatar/texture/male/sportive03.png",
         animationType: 4,
         position: [12.6, 0.11, -13],
         rotation: [0, -2 * Math.PI / 3, 0]
@@ -157,10 +158,9 @@ const avatarParams = [
         rotation: [0, Math.PI, 0]
     },
     {
-        sex: "female",
-        modelPath: "assets/avatar/model/female_business04.glb",
-        texturePath: "assets/avatar/texture/female/business05.png",
-        hairPath: "assets/avatar/texture/female/business05_hair.png",
+        sex: "male",
+        modelPath: "assets/avatar/model/male_business02.glb",
+        texturePath: "assets/avatar/texture/male/business05.png",
         animationType: 2,
         position: [-4.5, 0.11, -10.7],
         rotation: [0, -Math.PI / 2, 0]
@@ -177,9 +177,9 @@ const avatarParams = [
         walkPath: [[-3, 0.11, -14], [9, 0.11, -14]]
     },
     {
-        sex: "female",
-        modelPath: "assets/avatar/model/female_casual09.glb",
-        texturePath: "assets/avatar/texture/female/casual09.png",
+        sex: "male",
+        modelPath: "assets/avatar/model/male_business02.glb",
+        texturePath: "assets/avatar/texture/male/business02.png",
         animationType: 6,
         position: [4, 0, 4],
         rotation: [0, 0, 0],
