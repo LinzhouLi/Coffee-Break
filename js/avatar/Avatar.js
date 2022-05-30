@@ -15,7 +15,7 @@ class Avatar {
 
         this.model;
 
-        this.pace = 9.45; // 步行速度
+        this.pace = 9.2; // 步行速度
         this.turnSpeed = Math.PI / 30;
         this.destinationIndex = 0;
 
