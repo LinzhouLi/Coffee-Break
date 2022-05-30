@@ -58,30 +58,30 @@ class RoomManager {
         const logo1 = new Image3D([1.47, 1.46]);
         logo1.scene.position.set(-4.14, 1.82, 0.06);
         logo1.scene.rotation.y = -Math.PI / 2;
-        await logo1.loadImage("assets/room/texture/CASA_poster3.webp");
+        await logo1.loadImage("assets/room/texture/ISMAR_poster3.webp");
         this.scene.add(logo1.scene);
 
         const logo2 = new Image3D([0.8, 0.8]);
         logo2.scene.position.set(16.49, 2.06, -7.2);
         logo2.scene.rotation.y = -Math.PI / 2;
-        await logo2.loadImage("assets/room/texture/CASA_poster3.webp");
+        await logo2.loadImage("assets/room/texture/ISMAR_poster3.webp");
         this.scene.add(logo2.scene);
 
         const poster1 = new Image3D([3.96, 2.2]);
         poster1.scene.position.set(-8.915, 1.9, -9.27);
-        await poster1.loadImage("assets/room/texture/CASA_poster2.webp");
+        await poster1.loadImage("assets/room/texture/ISMAR_poster2.webp");
         this.scene.add(poster1.scene);
 
         const poster2 = new Image3D([2.35, 1.45]);
         poster2.scene.position.set(-3.7, 1.89, 0);
         poster2.scene.rotation.y = Math.PI / 2;
-        await poster2.loadImage("assets/room/texture/Nanjing.webp");
+        await poster2.loadImage("assets/room/texture/Singapore.webp");
         this.scene.add(poster2.scene);
 
         const poster3 = new Image3D([1.7, 1]);
         poster3.scene.position.set(13.39, 1.9, 8.91);
         poster3.scene.rotation.y = Math.PI;
-        await poster3.loadImage("assets/room/texture/CASA_poster.webp");
+        await poster3.loadImage("assets/room/texture/ISMAR_poster.webp");
         this.scene.add(poster3.scene);
 
     }
